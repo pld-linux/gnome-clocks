@@ -1,11 +1,11 @@
 Summary:	Clocks applications for GNOME
 Name:		gnome-clocks
-Version:	3.8.0
+Version:	3.8.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	6d0c387c1f11b30cb91fbe43e54d3d63
+# Source0-md5:	294dab9053bd04fe8f4ef88271642060
 URL:		https://live.gnome.org/GnomeClocks
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -39,7 +39,8 @@ alarms.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
