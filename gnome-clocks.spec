@@ -1,28 +1,36 @@
 Summary:	Clocks applications for GNOME
 Name:		gnome-clocks
-Version:	3.8.2
+Version:	3.10.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	ae7365415755bd35d6f9bcfc42498ba2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.10/%{name}-%{version}.tar.xz
+# Source0-md5:	9ab8d92b1ff63b4ca649ad2c1b10260e
 URL:		https://live.gnome.org/GnomeClocks
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
+BuildRequires:	geoclue2-devel >= 1.99.3
+BuildRequires:	geocode-glib-devel >= 0.99.3
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.30.0
+BuildRequires:	glib2-devel >= 1:2.36.0
 BuildRequires:	gnome-desktop-devel >= 3.8.0
-BuildRequires:	gtk+3-devel >= 3.8.0
+BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libcanberra-devel >= 0.30
-BuildRequires:	libgweather-devel >= 3.8.0
+BuildRequires:	libgweather-devel >= 3.10.0
 BuildRequires:	libnotify-devel >= 0.7.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
-BuildRequires:	vala >= 2:0.18.0
-Requires(post,postun):	glib2 >= 1:2.30.0
+BuildRequires:	vala >= 2:0.22.0
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
+BuildRequires:	yelp-tools
+Requires(post,postun):	glib2 >= 1:2.36.0
 Requires(post,postun):	gtk-update-icon-cache
+Requires:	glib2 >= 1:2.36.0
+Requires:	gtk+3 >= 3.10.0
 Requires:	hicolor-icon-theme
+Requires:	libgweather >= 3.10.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,7 +43,7 @@ alarms.
 %build
 %{__intltoolize}
 %{__libtoolize}
-%{__aclocal} -I m4 -I libgd
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -49,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
 %attr(755,root,root) %{_bindir}/gnome-clocks
+%{_datadir}/appdata/gnome-clocks.appdata.xml
 %{_datadir}/gnome-clocks
 %{_datadir}/glib-2.0/schemas/org.gnome.clocks.gschema.xml
 %{_desktopdir}/gnome-clocks.desktop
