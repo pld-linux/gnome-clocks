@@ -11,7 +11,7 @@ BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	geoclue2-devel >= 1.99.3
 BuildRequires:	geocode-glib-devel >= 0.99.4
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gnome-desktop-devel >= 3.8.0
 BuildRequires:	gtk+3-devel >= 3.10.0
