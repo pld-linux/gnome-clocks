@@ -1,11 +1,11 @@
 Summary:	Clocks applications for GNOME
 Name:		gnome-clocks
-Version:	3.14.1
+Version:	3.16.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.14/%{name}-%{version}.tar.xz
-# Source0-md5:	1952e7889d979f1221669d451a0971cc
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	f46d399f2968c4a3c1758dcaee18caf6
 URL:		https://live.gnome.org/GnomeClocks
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -14,8 +14,9 @@ BuildRequires:	geocode-glib-devel >= 0.99.4
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.40.0
 BuildRequires:	gnome-desktop-devel >= 3.8.0
+BuildRequires:	gsound-devel >= 0.98
 BuildRequires:	gtk+3-devel >= 3.10.0
-BuildRequires:	intltool >= 0.40.0
+BuildRequires:	intltool >= 0.50.1
 BuildRequires:	libcanberra-devel >= 0.30
 BuildRequires:	libgweather-devel >= 3.14.0
 BuildRequires:	libnotify-devel >= 0.7.0
