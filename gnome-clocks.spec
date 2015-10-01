@@ -1,11 +1,11 @@
 Summary:	Clocks applications for GNOME
 Name:		gnome-clocks
-Version:	3.16.1
+Version:	3.18.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	5f1d7ce5774de60f3f8b6995ba69ca5e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	40bf750917a9d16637899963508c8523
 URL:		https://live.gnome.org/GnomeClocks
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
