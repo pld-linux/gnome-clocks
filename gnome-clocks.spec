@@ -1,35 +1,33 @@
 Summary:	Clocks applications for GNOME
 Name:		gnome-clocks
-Version:	3.18.0
+Version:	3.22.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.18/%{name}-%{version}.tar.xz
-# Source0-md5:	40bf750917a9d16637899963508c8523
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	264a7366cf35ae2dcd92d2903e3427d9
 URL:		https://live.gnome.org/GnomeClocks
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	geoclue2-devel >= 1.99.3
+BuildRequires:	geoclue2-devel >= 2.3.1
 BuildRequires:	geocode-glib-devel >= 0.99.4
-BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.40.0
+BuildRequires:	gettext-tools >= 0.19.8
+BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gnome-desktop-devel >= 3.8.0
 BuildRequires:	gsound-devel >= 0.98
-BuildRequires:	gtk+3-devel >= 3.10.0
-BuildRequires:	intltool >= 0.50.1
-BuildRequires:	libcanberra-devel >= 0.30
+BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	libgweather-devel >= 3.14.0
-BuildRequires:	libnotify-devel >= 0.7.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires(post,postun):	glib2 >= 1:2.36.0
+Requires(post,postun):	glib2 >= 1:2.44.0
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	glib2 >= 1:2.40.0
-Requires:	gtk+3 >= 3.10.0
+Requires:	geoclue2 >= 2.3.1
+Requires:	glib2 >= 1:2.44.0
+Requires:	gtk+3 >= 3.20.0
 Requires:	hicolor-icon-theme
 Requires:	libgweather >= 3.14.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -42,7 +40,6 @@ alarms.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
