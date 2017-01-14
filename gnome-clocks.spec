@@ -1,4 +1,5 @@
 Summary:	Clocks applications for GNOME
+Summary(pl.UTF-8):	Aplikacje zegarów dla GNOME
 Name:		gnome-clocks
 Version:	3.22.1
 Release:	1
@@ -17,7 +18,7 @@ BuildRequires:	gnome-desktop-devel >= 3.8.0
 BuildRequires:	gsound-devel >= 0.98
 BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	libgweather-devel >= 3.14.0
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
@@ -26,7 +27,10 @@ BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.44.0
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	geoclue2 >= 2.3.1
+Requires:	geocode-glib >= 0.99.4
 Requires:	glib2 >= 1:2.44.0
+Requires:	gnome-desktop >= 3.8.0
+Requires:	gsound >= 0.98
 Requires:	gtk+3 >= 3.20.0
 Requires:	hicolor-icon-theme
 Requires:	libgweather >= 3.14.0
@@ -35,6 +39,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GNOME Clocks is a simple application to show the time, date and
 alarms.
+
+%description -l pl.UTF-8
+GNOME Clocks to prosta aplikacja do wyświetlania czasu, daty i
+alarmów.
 
 %prep
 %setup -q
@@ -62,12 +70,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_icon_cache hicolor
-%update_icon_cache HighContrast
 %glib_compile_schemas
 
 %postun
 %update_icon_cache hicolor
-%update_icon_cache HighContrast
 %glib_compile_schemas
 
 %files -f %{name}.lang
@@ -80,5 +86,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/glib-2.0/schemas/org.gnome.clocks.gschema.xml
 %{_datadir}/dbus-1/services/org.gnome.clocks.service
 %{_desktopdir}/org.gnome.clocks.desktop
-%{_iconsdir}/hicolor/*/*/*.png
-%{_iconsdir}/hicolor/*/*/*.svg
+%{_iconsdir}/hicolor/*x*/apps/org.gnome.clocks.png
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.clocks-symbolic.svg
