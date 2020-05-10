@@ -1,12 +1,12 @@
 Summary:	Clocks applications for GNOME
 Summary(pl.UTF-8):	Aplikacje zegarów dla GNOME
 Name:		gnome-clocks
-Version:	3.36.0
+Version:	3.36.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	33956dbe2ae95e590d15de371e8e6c5a
+# Source0-md5:	fced4f3c397327c2e4b5998e97970340
 URL:		https://wiki.gnome.org/Apps/Clocks
 BuildRequires:	geoclue2-devel >= 2.4.0
 BuildRequires:	geocode-glib-devel >= 1.0
