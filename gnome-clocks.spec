@@ -1,12 +1,12 @@
 Summary:	Clocks applications for GNOME
 Summary(pl.UTF-8):	Aplikacje zegarów dla GNOME
 Name:		gnome-clocks
-Version:	3.36.2
+Version:	3.38.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.36/%{name}-%{version}.tar.xz
-# Source0-md5:	fced4f3c397327c2e4b5998e97970340
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-clocks/3.38/%{name}-%{version}.tar.xz
+# Source0-md5:	fac569962dab03d68c22f7f737d71194
 URL:		https://wiki.gnome.org/Apps/Clocks
 BuildRequires:	geoclue2-devel >= 2.4.0
 BuildRequires:	geocode-glib-devel >= 1.0
@@ -16,7 +16,7 @@ BuildRequires:	gnome-desktop-devel >= 3.8.0
 BuildRequires:	gsound-devel >= 0.98
 BuildRequires:	gtk+3-devel >= 3.20.0
 BuildRequires:	libgweather-devel >= 3.32.0
-BuildRequires:	libhandy-devel >= 0.0.10
+BuildRequires:	libhandy1-devel >= 1.0.0
 BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
@@ -26,6 +26,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
 BuildRequires:	vala-gsound >= 0.98
 BuildRequires:	vala-libgweather >= 3.32.0
+BuildRequires:	vala-libhandy1 >= 1.0.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.58
@@ -38,7 +39,7 @@ Requires:	gsound >= 0.98
 Requires:	gtk+3 >= 3.20.0
 Requires:	hicolor-icon-theme
 Requires:	libgweather >= 3.32.0
-Requires:	libhandy >= 0.0.10
+Requires:	libhandy1 >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -77,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS.md NEWS.md README.md
+%doc AUTHORS.md NEWS README.md
 %attr(755,root,root) %{_bindir}/gnome-clocks
 %{_datadir}/dbus-1/services/org.gnome.clocks.service
 %{_datadir}/glib-2.0/schemas/org.gnome.clocks.gschema.xml
