@@ -1,17 +1,17 @@
 Summary:	Clocks applications for GNOME
 Summary(pl.UTF-8):	Aplikacje zegarów dla GNOME
 Name:		gnome-clocks
-Version:	40.0
+Version:	41.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-clocks/40/%{name}-%{version}.tar.xz
-# Source0-md5:	15b7ff01d11448e206595f660aa49e74
+Source0:	https://download.gnome.org/sources/gnome-clocks/41/%{name}-%{version}.tar.xz
+# Source0-md5:	1f9a191d8c760d9836dd552c68a485c5
 URL:		https://wiki.gnome.org/Apps/Clocks
 BuildRequires:	geoclue2-devel >= 2.4.0
 BuildRequires:	geocode-glib-devel >= 1.0
 BuildRequires:	gettext-tools >= 0.19.8
-BuildRequires:	glib2-devel >= 1:2.58
+BuildRequires:	glib2-devel >= 1:2.68
 BuildRequires:	gnome-desktop-devel >= 3.8.0
 BuildRequires:	gsound-devel >= 0.98
 BuildRequires:	gtk+3-devel >= 3.20.0
@@ -29,11 +29,11 @@ BuildRequires:	vala-libgweather >= 3.32.0
 BuildRequires:	vala-libhandy1 >= 1.0.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires(post,postun):	glib2 >= 1:2.58
+Requires(post,postun):	glib2 >= 1:2.68
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	geoclue2 >= 2.4.0
 Requires:	geocode-glib >= 1.0
-Requires:	glib2 >= 1:2.58
+Requires:	glib2 >= 1:2.68
 Requires:	gnome-desktop >= 3.8.0
 Requires:	gsound >= 0.98
 Requires:	gtk+3 >= 3.20.0
