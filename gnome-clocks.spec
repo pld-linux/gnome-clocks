@@ -1,32 +1,34 @@
+# TODO: use gtk4-update-icon-cache
 Summary:	Clocks applications for GNOME
 Summary(pl.UTF-8):	Aplikacje zegarów dla GNOME
 Name:		gnome-clocks
-Version:	41.0
+Version:	42.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-clocks/41/%{name}-%{version}.tar.xz
-# Source0-md5:	1f9a191d8c760d9836dd552c68a485c5
+Source0:	https://download.gnome.org/sources/gnome-clocks/42/%{name}-%{version}.tar.xz
+# Source0-md5:	aab676dbc83c6079ae4db69582b6d3c2
+Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Clocks
 BuildRequires:	geoclue2-devel >= 2.4.0
 BuildRequires:	geocode-glib-devel >= 1.0
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.68
-BuildRequires:	gnome-desktop-devel >= 3.8.0
+BuildRequires:	gnome-desktop4-devel >= 42
 BuildRequires:	gsound-devel >= 0.98
-BuildRequires:	gtk+3-devel >= 3.20.0
-BuildRequires:	libgweather-devel >= 3.32.0
-BuildRequires:	libhandy1-devel >= 1.0.0
-BuildRequires:	meson >= 0.50.0
+BuildRequires:	gtk4-devel >= 4.5
+BuildRequires:	libadwaita-devel >= 1.0
+BuildRequires:	libgweather4-devel >= 4.0
+BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	python3 >= 1:3.2
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
+BuildRequires:	vala-libadwaita >= 1.0
 BuildRequires:	vala-gsound >= 0.98
-BuildRequires:	vala-libgweather >= 3.32.0
-BuildRequires:	vala-libhandy1 >= 1.0.0
+BuildRequires:	vala-libgweather4 >= 4.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.68
@@ -34,12 +36,12 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	geoclue2 >= 2.4.0
 Requires:	geocode-glib >= 1.0
 Requires:	glib2 >= 1:2.68
-Requires:	gnome-desktop >= 3.8.0
+Requires:	gnome-desktop4 >= 42
 Requires:	gsound >= 0.98
-Requires:	gtk+3 >= 3.20.0
+Requires:	gtk4 >= 4.5
 Requires:	hicolor-icon-theme
-Requires:	libgweather >= 3.32.0
-Requires:	libhandy1 >= 1.0.0
+Requires:	libadwaita >= 1.0
+Requires:	libgweather4 >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,6 +54,7 @@ alarmów.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %meson build
