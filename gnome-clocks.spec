@@ -1,23 +1,30 @@
 # TODO: use gtk4-update-icon-cache
+
+%define soup_api	%(pkg-config --variable=soupapiversion gweather4 2>/dev/null || echo 2.4)
+
 Summary:	Clocks applications for GNOME
 Summary(pl.UTF-8):	Aplikacje zegarów dla GNOME
 Name:		gnome-clocks
-Version:	42.0
+Version:	43.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-clocks/42/%{name}-%{version}.tar.xz
-# Source0-md5:	aab676dbc83c6079ae4db69582b6d3c2
+Source0:	https://download.gnome.org/sources/gnome-clocks/43/%{name}-%{version}.tar.xz
+# Source0-md5:	6cd9c04a36eb86faceeedc5c57549ce5
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Clocks
 BuildRequires:	geoclue2-devel >= 2.4.0
+%if "%{soup_api}" == "3.0"
+BuildRequires:	geocode-glib2-devel >= 3.26
+%else
 BuildRequires:	geocode-glib-devel >= 1.0
+%endif
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.68
 BuildRequires:	gnome-desktop4-devel >= 42
 BuildRequires:	gsound-devel >= 0.98
 BuildRequires:	gtk4-devel >= 4.5
-BuildRequires:	libadwaita-devel >= 1.0
+BuildRequires:	libadwaita-devel >= 1.2
 BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja >= 1.5
@@ -26,7 +33,7 @@ BuildRequires:	python3 >= 1:3.2
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
-BuildRequires:	vala-libadwaita >= 1.0
+BuildRequires:	vala-libadwaita >= 1.2
 BuildRequires:	vala-gsound >= 0.98
 BuildRequires:	vala-libgweather4 >= 4.0
 BuildRequires:	xz
@@ -34,13 +41,17 @@ BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.68
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	geoclue2 >= 2.4.0
+%if "%{soup_api}" == "3.0"
+Requires:	geocode-glib2 >= 3.26
+%else
 Requires:	geocode-glib >= 1.0
+%endif
 Requires:	glib2 >= 1:2.68
 Requires:	gnome-desktop4 >= 42
 Requires:	gsound >= 0.98
 Requires:	gtk4 >= 4.5
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.0
+Requires:	libadwaita >= 1.2
 Requires:	libgweather4 >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
