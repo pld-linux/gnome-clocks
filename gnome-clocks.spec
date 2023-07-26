@@ -5,12 +5,12 @@
 Summary:	Clocks applications for GNOME
 Summary(pl.UTF-8):	Aplikacje zegarów dla GNOME
 Name:		gnome-clocks
-Version:	43.0
+Version:	44.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-clocks/43/%{name}-%{version}.tar.xz
-# Source0-md5:	6cd9c04a36eb86faceeedc5c57549ce5
+Source0:	https://download.gnome.org/sources/gnome-clocks/44/%{name}-%{version}.tar.xz
+# Source0-md5:	62fbbcb761ff05cb8213cbbd2af7b7fc
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Clocks
 BuildRequires:	geoclue2-devel >= 2.4.0
@@ -20,7 +20,7 @@ BuildRequires:	geocode-glib2-devel >= 3.26
 BuildRequires:	geocode-glib-devel >= 1.0
 %endif
 BuildRequires:	gettext-tools >= 0.19.8
-BuildRequires:	glib2-devel >= 1:2.68
+BuildRequires:	glib2-devel >= 1:2.72
 BuildRequires:	gnome-desktop4-devel >= 42
 BuildRequires:	gsound-devel >= 0.98
 BuildRequires:	gtk4-devel >= 4.5
@@ -38,7 +38,7 @@ BuildRequires:	vala-gsound >= 0.98
 BuildRequires:	vala-libgweather4 >= 4.0
 BuildRequires:	xz
 BuildRequires:	yelp-tools
-Requires(post,postun):	glib2 >= 1:2.68
+Requires(post,postun):	glib2 >= 1:2.72
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	geoclue2 >= 2.4.0
 %if "%{soup_api}" == "3.0"
@@ -46,7 +46,7 @@ Requires:	geocode-glib2 >= 3.26
 %else
 Requires:	geocode-glib >= 1.0
 %endif
-Requires:	glib2 >= 1:2.68
+Requires:	glib2 >= 1:2.72
 Requires:	gnome-desktop4 >= 42
 Requires:	gsound >= 0.98
 Requires:	gtk4 >= 4.5
