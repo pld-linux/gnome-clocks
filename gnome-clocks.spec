@@ -35,6 +35,8 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	vala >= 2:0.24.0
 BuildRequires:	vala-libadwaita >= 1.8
 BuildRequires:	vala-libgweather4 >= 4.0
+# oggenc
+BuildRequires:	vorbis-tools
 BuildRequires:	xz
 BuildRequires:	yelp-tools
 Requires(post,postun):	glib2 >= 1:2.72
